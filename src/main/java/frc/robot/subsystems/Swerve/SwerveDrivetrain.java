@@ -51,11 +51,12 @@ public class SwerveDrivetrain extends Subsystem {
   private SwerveModule rearRight;
   private SwerveModule rearLeft;
   
-  /*private Encoder analogFrontRight = RobotMap.frontRight; // changed encoder from DigitalInput
+  /*
+  private Encoder analogFrontRight = RobotMap.frontRight; // changed encoder from DigitalInput
   private Encoder analogFrontLeft = RobotMap.frontLeft;
   private Encoder analogRearRight = RobotMap.rearRight;
   private Encoder analogRearLeft = RobotMap.rearLeft;
-*/
+  */
   private static Encoder enc = RobotMap.driveEncoder;
   private static AHRS gyro = RobotMap.navx;
 
@@ -75,22 +76,20 @@ public class SwerveDrivetrain extends Subsystem {
 
   @Override
   public void initDefaultCommand() {
-    
     // Set the default command for a subsystem here.
     // setDefaultCommand(new MySpecialCommand());
     setDefaultCommand(new Drive());
   }
 
   public void init(){
-   //set gyro to 0;
-   
-   initSteerMotor(frSteer);
-   initSteerMotor(flSteer);
-   initSteerMotor(rrSteer);
-   initSteerMotor(rlSteer);
-
-   resetQuadrentureEncoder();
-   resetDriveEnc();
+    //set gyro to 0;
+    
+    initSteerMotor(frSteer);
+    initSteerMotor(flSteer);
+    initSteerMotor(rrSteer);
+    initSteerMotor(rlSteer);
+    resetQuadrentureEncoder();
+    resetDriveEnc();
   }
 
   public void initSteerMotor(BaseMotorController steerMotor){
@@ -151,19 +150,19 @@ public class SwerveDrivetrain extends Subsystem {
   }
   
   public void toggleMode(){
-		Robot.swerveMath.toggleCentricMode();
-	}
+    Robot.swerveMath.toggleCentricMode();
+  }
 	
-	public void setModeRobot() {
-		Robot.swerveMath.setModeRobot();
-	}
+  public void setModeRobot() {
+    Robot.swerveMath.setModeRobot();
+  }
 	
-	public CentricMode getModeRobot() {
-		return Robot.swerveMath.getCentricMode();
-	}
+  public CentricMode getModeRobot() {
+    return Robot.swerveMath.getCentricMode();
+  }
 	
-	public void setModeField() {
-		Robot.swerveMath.setModeField();
+  public void setModeField() {
+    Robot.swerveMath.setModeField();
   }
   
   public double getWidth() {
@@ -173,4 +172,5 @@ public class SwerveDrivetrain extends Subsystem {
   public double getLength() {
     return length;
   }
+
 }

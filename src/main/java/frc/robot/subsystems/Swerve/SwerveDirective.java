@@ -12,32 +12,32 @@ package frc.robot.subsystems.Swerve;
  */
 public class SwerveDirective {
 
-private double speed;
-private double angle;
+    private double speed;
+    private double angle;
 
-public SwerveDirective(){ //does anything?
-    
-}
+    public SwerveDirective(){ //does anything? //yep, its the code that gets run when a SwerveDirective variable is declared without specifing the speed and angle.
+        
+    }
 
-public SwerveDirective(double speed, double angle){
-this.speed = speed;
-this.angle = angle;
-}
+    public SwerveDirective(double speed, double angle){
+        this.speed = speed;
+        this.angle = angle;
+    }
 
-public double getSpeed(){
-    return speed;
-}
+    public double getSpeed(){
+        return speed;
+    }
 
-public double getAngle(){
-    return angle;
-}
+    public double getAngle(){
+        return angle;
+    }
 
-public void setSpeed(double speed){
-    this.speed = speed;
-}
+    public void setSpeed(double speed){
+        this.speed = speed;
+    }
 
-public void setAngle(double angle){
-    this.angle = angle;
-}
+    public void setAngle(double angle){
+        this.angle = angle;
+    }
 
 }

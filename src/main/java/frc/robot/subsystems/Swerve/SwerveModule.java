@@ -25,14 +25,14 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  */
 public class SwerveModule {
 
-private String name;
-private double gearRatio;
+    private String name;
+    private double gearRatio;
 
-private BaseMotorController driveMotor;
-private BaseMotorController steerMotor;
+    private BaseMotorController driveMotor;
+    private BaseMotorController steerMotor;
 
-private boolean reverseEncoder = false;
-private boolean reverseSteer = false;
+    private boolean reverseEncoder = false;
+    private boolean reverseSteer = false;
 
     public SwerveModule(String name, BaseMotorController drive, BaseMotorController steer, double gearRatio){
         this.name = name;
@@ -92,26 +92,28 @@ private boolean reverseSteer = false;
         
         setSpeed(speed);
         
-        if (speed != 0.0){ 
+        if (speed != 0.0) { 
             setAngle(angle); 
-            SmartDashboard.putNumber("move angle", angle);
+            SmartDashboard.putNumber(name + " move angle", angle);
         }
     }
 
     //checks if the wheel is at a spot to reverse to get to desired direction
-    //The subsequen \t set and get angles all work towards making sure the wheel will turn the right direction
+    //The subsequent set and get angles all work towards making sure the wheel will turn the right direction
     public boolean shouldReverse(double angle, double encoderValue){
         double ea = SwerveUtil.convertEncoderValue(encoderValue, encTicPerRotate);
 		
-		if(angle < 0)	angle += 1;
+		if(angle < 0) angle += 1;
 		
 		double longDiff = Math.abs(angle - ea);
 		
 		double diff = Math.min(longDiff, 1.0-longDiff);
 		
-		if(diff > 0.25) { 
-            return true; }
-		else {return false; }
+		if (diff > 0.25) {
+            return true;
+        } else {
+            return false;
+        }
     }
     
     private double convertAngle(double angle, double encoderValue){
