@@ -60,7 +60,7 @@ private boolean reverseSteer = false;
 
     public void setAngle(double angle){
         //more beyblade code
-        steerMotor.set(ControlMode.Position, angle * encTicPerRotate);
+        steerMotor.set(ControlMode.Position, (reverseEncoder ? -1 : 1) * angle * encTicPerRotate);
     }
 
     public void setEncoder(int postion){

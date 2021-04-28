@@ -103,15 +103,15 @@ public class SwerveDrivetrain extends Subsystem {
     steerMotor.configNominalOutputForward(0, 10);
     steerMotor.configNominalOutputReverse(0, 10);
 
+    frontLeft.setReverseEncoder(true);
     frontRight.setReverseEncoder(false);
-		frontLeft.setReverseEncoder(false);
-		rearLeft.setReverseEncoder(false);
-		rearRight.setReverseEncoder(false);
-		
-		frontRight.setReverseSteerMotor(true);
-		frontLeft.setReverseSteerMotor(true);
-		rearLeft.setReverseSteerMotor(true);
-		rearRight.setReverseSteerMotor(true);
+    rearLeft.setReverseEncoder(true);
+    rearRight.setReverseEncoder(false);
+    
+    frontRight.setReverseSteerMotor(true);
+    frontLeft.setReverseSteerMotor(true);
+    rearLeft.setReverseSteerMotor(true);
+    rearRight.setReverseSteerMotor(true);
 
     steerMotor.setNeutralMode(NeutralMode.Brake);
 
