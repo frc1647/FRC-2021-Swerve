@@ -126,7 +126,6 @@ public class SwerveDrivetrain extends Subsystem {
   }
 
   public void resetQuadrentureEncoder(){
-    
     frSteer.set(ControlMode.Position, 0);
     flSteer.set(ControlMode.Position, 0);
     rrSteer.set(ControlMode.Position, 0);

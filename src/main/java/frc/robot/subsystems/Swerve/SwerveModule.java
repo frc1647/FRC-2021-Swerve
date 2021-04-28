@@ -102,14 +102,14 @@ public class SwerveModule {
     //The subsequent set and get angles all work towards making sure the wheel will turn the right direction
     public boolean shouldReverse(double angle, double encoderValue){
         double ea = SwerveUtil.convertEncoderValue(encoderValue, encTicPerRotate);
-		
-		if(angle < 0) angle += 1;
-		
-		double longDiff = Math.abs(angle - ea);
-		
-		double diff = Math.min(longDiff, 1.0-longDiff);
-		
-		if (diff > 0.25) {
+
+        if(angle < 0) angle += 1;
+        
+        double longDiff = Math.abs(angle - ea);
+
+        double diff = Math.min(longDiff, 1.0-longDiff);
+        
+        if (diff > 0.25) {
             return true;
         } else {
             return false;
@@ -146,7 +146,7 @@ public class SwerveModule {
 
         if((angle - encPos) >  0.5) temp -= 1;
 
-		if((angle - encPos) < -0.5) temp += 1;
+        if((angle - encPos) < -0.5) temp += 1;
 		
         return temp;
     }
@@ -160,7 +160,7 @@ public class SwerveModule {
     }
 
     public void setEncPosition(int position){
-		steerMotor.setSelectedSensorPosition(position, 0, 10);
+        steerMotor.setSelectedSensorPosition(position, 0, 10);
     }
     
     public int getEncPosition(){
@@ -173,14 +173,14 @@ public class SwerveModule {
     }
 
     public boolean isReverseEncoder(){
-		return reverseEncoder;
-	}
+        return reverseEncoder;
+    }
 	
-	public void setReverseEncoder(boolean reverseEncoder){
-		this.reverseEncoder = reverseEncoder;
-	}
+    public void setReverseEncoder(boolean reverseEncoder){
+        this.reverseEncoder = reverseEncoder;
+    }
 	
-	public void setReverseSteerMotor(boolean reverseSteer){
-		this.reverseSteer = reverseSteer;
-	}
+    public void setReverseSteerMotor(boolean reverseSteer){
+        this.reverseSteer = reverseSteer;
+    }
 }

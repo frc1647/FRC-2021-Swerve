@@ -41,13 +41,13 @@ public class SwerveMath {
     }
 
     public void toggleCentricMode() {
-		switch(centricMode) {
-		    case Robot: centricMode=CentricMode.Field;
-		    	break;
-		    case Field: centricMode=CentricMode.Robot;
-		    	break;
-		}
-	}
+        switch(centricMode) {
+            case Robot: centricMode=CentricMode.Field;
+                break;
+            case Field: centricMode=CentricMode.Robot;
+                break;
+        }
+    }
 
     public SwerveMath(double width, double length){
         // frDrive.configSelectedFeedbackSensor(FeedbackDevice.CTRE_MagEncoder_Absolute);
@@ -116,19 +116,19 @@ public class SwerveMath {
         //double temp = (fwd*Math.cos(gyro.getAngle())) + str*Math.sin(gyro.getAngle());
         double max = frs; 
         if(fls>max){
-        	max = fls;
+            max = fls;
         }
         if(rls>max){
-        	max = rls;
+            max = rls;
         }
         if(rrs>max){
             max = rrs;
         }
         if(max>1){
-        	frs/=max;
-        	fls/=max;
-        	rrs/=max;
-        	rls/=max;
+            frs/=max;
+            fls/=max;
+            rrs/=max;
+            rls/=max;
         }
 
         //changes -180 to 180 angles to -0.5 to 0.5 angles 
