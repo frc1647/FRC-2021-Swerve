@@ -8,7 +8,9 @@
 package frc.robot.subsystems.Swerve;
 
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import frc.robot.commands.Movement.Drive;/**
+import frc.robot.commands.Movement.Drive;
+import frc.robot.Robot;
+/**
  * Add your docs here.
  */
 public class Swerve {
@@ -18,21 +20,22 @@ public class Swerve {
     private SwerveModule module3;
     private SwerveModule module4;
 
-    private final SwerveMath math;
+    private final SwerveMath math; //this might be redundant
 
     private SwerveDirective[] swerveDirectives = {new SwerveDirective(), new SwerveDirective(), new SwerveDirective(), new SwerveDirective()};
 
-    public Swerve(SwerveModule module1, SwerveModule module2, SwerveModule module3, SwerveModule module4, double width, double length){
+    public Swerve(SwerveModule module1, SwerveModule module2, SwerveModule module3, SwerveModule module4, double width, double length){ //width and length as parameters might be redundant
         this.module1 = module1;
         this.module2 = module2;
         this.module3 = module3;
         this.module4 = module4;
 
-        math = new SwerveMath(width, length);
+        math = new SwerveMath(width, length); //this might be redundant
     }
 
     public void move(double fwd, double str, double rcw, double gyroVal){
-        math.move(fwd, str, rcw, gyroVal, swerveDirectives);
+        math.move(fwd, str, rcw, gyroVal, swerveDirectives); //this might be redundant
+        //Robot.swerveMath.move(fwd, str, rcw, gyroVal, swerveDirectives); //this might be a replacement for everything noted as potentally redundnant
 
         module1.move(swerveDirectives[0].getSpeed(), swerveDirectives[0].getAngle());
         module2.move(swerveDirectives[1].getSpeed(), swerveDirectives[1].getAngle());
